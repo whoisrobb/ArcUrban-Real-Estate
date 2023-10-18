@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { listings } from "../utils/data";
+import { Link } from "react-router-dom";
 
 
 const Landing = () => {
@@ -50,7 +51,9 @@ const Landing = () => {
             <div className="property-name">
               <h1>{homeData[activeProperty].property_name}</h1>
             </div>
-            <button className="view">View Listing</button>
+            <button className="view">
+              <Link to={`/listings/property/${homeData[activeProperty].id}`}>view listing</Link>
+            </button>
           </div>
         </div>
   

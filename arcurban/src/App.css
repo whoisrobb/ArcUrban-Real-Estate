@@ -32,6 +32,11 @@ body {
   align-items: center;
   height: 25rem;
 }
+#landing .wrapper button.view a {
+  color: #c5baaa;
+  text-decoration: none;
+  padding: 0.5rem 0;
+}
 #landing .wrapper .property-type p {
   cursor: default;
   font-size: 1.2rem;
@@ -170,6 +175,14 @@ button.view:hover::before {
 #listings .wrapper .item .right {
   width: 50%;
 }
+#listings .wrapper .item .right button.view a {
+  color: #2c2c2c;
+  text-decoration: none;
+  padding: 0.5rem 0;
+}
+#listings .wrapper .item .right button.view::before {
+  background: rgba(44, 44, 44, 0.5);
+}
 #listings .wrapper .item .right .details {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -182,11 +195,79 @@ button.view:hover::before {
   color: #2c2c2c;
   font-family: "Bebas Neue";
 }
-#listings .wrapper .item .right button.view a {
-  color: #2c2c2c;
-  text-decoration: none;
-  padding: 0.5rem 0;
+
+/* PROPERTY DETAILS */
+#property-listing h1, #property-listing h2, #property-listing h3, #property-listing h4, #property-listing h5, #property-listing h6, #property-listing p {
+  margin: 0;
+  padding: 0;
 }
-#listings .wrapper .item .right button.view::before {
-  background: rgba(44, 44, 44, 0.5);
+#property-listing .wrapper {
+  margin: 2rem 4rem;
+}
+#property-listing .wrapper .intro {
+  display: flex;
+  justify-content: space-between;
+  gap: 5rem;
+}
+#property-listing .wrapper .intro h1 {
+  font-family: "Barlow Semi Condensed";
+  font-size: 5rem;
+}
+#property-listing .wrapper .intro .description {
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+#property-listing .wrapper .intro .description p {
+  font-family: "Nunito Sans";
+  color: rgba(44, 44, 44, 0.7);
+  font-size: 1.1rem;
+}
+#property-listing .wrapper .image {
+  margin: 4rem 0;
+  width: 100%;
+}
+#property-listing .wrapper .image img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+#property-listing .wrapper .subheading h1 {
+  font-family: "Barlow Semi Condensed";
+  font-size: 2rem;
+}
+#property-listing .wrapper .details {
+  display: flex;
+  justify-content: space-between;
+  margin: 4rem 0;
+}
+#property-listing .wrapper .details .info {
+  width: 40%;
+}
+#property-listing .wrapper .details .info h3 {
+  font-family: "Barlow Semi Condensed";
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+#property-listing .wrapper .details .info p {
+  font-family: "Nunito Sans";
+  color: rgba(44, 44, 44, 0.7);
+  font-size: 1.1rem;
+}
+#property-listing .wrapper .details .ammenities ul {
+  font-family: "Nunito Sans";
+  font-size: 1.1rem;
+  text-transform: capitalize;
+}
+#property-listing .wrapper .details .ammenities ul li {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+  padding: 0.3rem;
+  border-top: 1px solid rgba(44, 44, 44, 0.2);
+}
+#property-listing .wrapper .details .ammenities ul li .value {
+  margin-left: 2rem;
+  color: rgba(44, 44, 44, 0.7);
 }/*# sourceMappingURL=App.css.map */

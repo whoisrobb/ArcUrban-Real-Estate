@@ -45,6 +45,15 @@ body {
         align-items: center;
         height: 25rem;
 
+        button.view {
+            
+            a {
+                color: $concrete;
+                text-decoration: none;
+                padding: 0.5rem 0;
+            }
+        }
+
         .property-type {
 
             p {
@@ -120,7 +129,6 @@ body {
 
 button.view {
     background: transparent;
-    // background: red;
     cursor: pointer;
     border: none;
     color: $white;
@@ -128,9 +136,9 @@ button.view {
     font-size: 1.2rem;
     padding: 10px 0;
     position: relative;
-  }
+}
   
-  button.view::before {
+button.view::before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -141,12 +149,12 @@ button.view {
     transform: scaleX(1);
     transform-origin: left;
     transition: transform 200ms ease-in-out;
-  }
+}
   
-  button.view:hover::before {
+button.view:hover::before {
     transform-origin: right;
     transform: scaleX(0);
-  }
+}
 
 .active {
     position: relative;
@@ -209,6 +217,20 @@ button.view {
             .right {
                 width: 50%;
                 
+
+                button.view {
+
+                    a {
+                        color: $graphite;
+                        text-decoration: none;
+                        padding: 0.5rem 0;
+                    }
+
+                    &::before {
+                        background: rgba($graphite, .5);
+                    }
+                }
+                
                 p {
                     // margin-bottom: 0.1rem;
                     // padding-bottom: 0.1rem;
@@ -228,17 +250,105 @@ button.view {
                     color: $graphite;
                     font-family: $bebas;
                 }
+            }
+        }
+    }
+}
 
-                button.view {
+/* PROPERTY DETAILS */
+#property-listing {
 
-                    a {
-                        color: $graphite;
-                        text-decoration: none;
-                        padding: 0.5rem 0;
-                    }
+    h1, h2, h3, h4, h5, h6, p {
+        margin: 0;
+        padding: 0;
+    }
 
-                    &::before {
-                        background: rgba($graphite, .5);
+    .wrapper {
+        margin: 2rem 4rem;
+
+        .intro {
+            display: flex;
+            justify-content: space-between;
+            gap: 5rem;
+
+            h1 {
+                font-family: $barlow;
+                font-size: 5rem;
+            }
+
+            .description {
+                // background: red;
+                width: 30rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+
+                p {
+                    font-family: $sans;
+                    color: rgba($graphite, .7);
+                    font-size: 1.1rem;
+                }
+            }
+        }
+
+        .image {
+            margin: 4rem 0;
+            // background: grey;
+            width: 100%;
+            // height: 30rem;
+
+            img {
+                width: 100%;
+                // height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        .subheading {
+            h1 {
+                font-family: $barlow;
+                font-size: 2rem;
+            }
+        }
+
+        .details {
+            display: flex;
+            justify-content: space-between;
+            margin: 4rem 0;
+
+            .info {
+                width: 40%;
+
+                h3 {
+                    font-family: $barlow;
+                    font-size: 1.5rem;
+                    margin-bottom: 1.5rem;
+                }
+
+                p {
+                    font-family: $sans;
+                    color: rgba($graphite, .7);
+                    font-size: 1.1rem;
+                }
+            }
+
+            .ammenities {
+                ul {
+                    font-family: $sans;
+                    font-size: 1.1rem;
+                    text-transform: capitalize;
+
+                    li {
+                        display: flex;
+                        justify-content: space-between;
+                        margin: 1rem 0;
+                        padding: 0.3rem;
+                        border-top: 1px solid rgba($graphite, .2);
+
+                        .value {
+                            margin-left: 2rem;
+                            color: rgba($graphite, .7);
+                        }
                     }
                 }
             }

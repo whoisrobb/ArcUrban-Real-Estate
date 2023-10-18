@@ -51,7 +51,7 @@ const Listings = () => {
                             </div>
                         </div>
                         <button className="view">
-                            <Link to={''}>view listing</Link>
+                            <Link to={`/listings/property/${listing.id}`}>view listing</Link>
                         </button>
                     </div>
                 </div>
