@@ -8,14 +8,17 @@ const Listings = () => {
   return (
     <section id='listings'>
         <div className="wrapper">
+              <Link className="btn back-btn" to={'..'}><i className="uil uil-angle-left"></i></Link>
         <h1 className="header">Listings</h1>
 
             {properties.map((listing, index) => (
                 <div key={index} className="item">
                     <div className="left">
-                        <p className='header'>property</p>
+                        {/* <p className='header'>property</p> */}
                         <p className="name">{listing.property_name}</p>
-                        <img src={`/cover-photo/${listing.cover_photo}`} alt="" />
+                        <Link to={`/listings/property/${listing.id}`}>
+                            <img src={`/cover-photo/${listing.cover_photo}`} alt="" />
+                        </Link>
                     </div>
                     <div className="right">
                         <div className="details">

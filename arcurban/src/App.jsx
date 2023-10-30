@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 import Landing from './pages/Landing'
 import Listings from './pages/Listings'
 import PropertyListing from './pages/PropertyListing'
+import PageOutlet from './components/PageOutlet'
 
 function App() {
 
@@ -12,8 +13,10 @@ function App() {
       <Routes>
         <Route path='/'>
           <Route index element={<Landing />} />
-          <Route path='listings' element={<Listings />} />
-          <Route path='listings/property/:id' element={<PropertyListing />} />
+          <Route path='listings' element={<PageOutlet />} >
+            <Route index element={<Listings />} />
+            <Route path='property/:id' element={<PropertyListing />} />
+          </Route>
         </Route>
       </Routes>
     </div>
