@@ -74,6 +74,62 @@ button.view:hover::before {
   margin-left: 1rem;
 }
 
+/* LANDING NAVIGATION */
+.landing-nav {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem;
+}
+.landing-nav a.logo {
+  text-decoration: none;
+  color: #c5baaa;
+  font-family: "Bebas Neue";
+}
+.landing-nav button {
+  background: transparent;
+  border: none;
+  font-family: "Bebas Neue";
+  display: flex;
+  align-items: center;
+  color: #c5baaa;
+  z-index: 999;
+}
+.landing-nav button .uil {
+  font-size: 1.2rem;
+  margin-left: 1rem;
+}
+.landing-nav nav {
+  background: #eeeeee;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 40%;
+  font-family: "Bebas Neue";
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 4rem;
+  transform-origin: top;
+  overflow: hidden;
+  z-index: 99;
+}
+.landing-nav nav .wrapper {
+  margin: 4rem;
+}
+.landing-nav nav .wrapper a {
+  text-decoration: none;
+  color: #2c2c2c;
+  transition: 200ms ease-in-out;
+}
+.landing-nav nav .wrapper a:hover {
+  margin-left: 2rem;
+}
+
 /* LANDING PAGE */
 #landing {
   display: flex;
@@ -392,6 +448,12 @@ button.view:hover::before {
 /* Phones (smaller screens) */
 @media only screen and (max-width: 767px) {
   /* Your CSS for phones here */
+  .landing-nav {
+    padding: 1rem 2rem;
+  }
+  .landing-nav nav {
+    width: 100%;
+  }
   #landing .wrapper {
     margin: 4rem 2rem;
   }

@@ -5,6 +5,7 @@ import Landing from './pages/Landing'
 import Listings from './pages/Listings'
 import PropertyListing from './pages/PropertyListing'
 import PageOutlet from './components/PageOutlet'
+import LandingOutlet from './components/LandingOutlet'
 
 function App() {
 
@@ -12,7 +13,9 @@ function App() {
     <div>
       <Routes>
         <Route path='/'>
-          <Route index element={<Landing />} />
+          <Route path='/' element={<LandingOutlet />} >
+            <Route index element={<Landing />} />
+          </Route>
           <Route path='listings' element={<PageOutlet />} >
             <Route index element={<Listings />} />
             <Route path='property/:id' element={<PropertyListing />} />

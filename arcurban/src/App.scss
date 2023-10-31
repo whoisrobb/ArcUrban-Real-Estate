@@ -90,6 +90,70 @@ button.view:hover::before {
 }
 
 
+/* LANDING NAVIGATION */
+.landing-nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4rem;
+
+    a.logo {
+        text-decoration: none;
+        color: $concrete;
+        font-family: $bebas;
+    }
+
+    button {
+        background: transparent;
+        border: none;
+        font-family: $bebas;
+        display: flex;
+        align-items: center;
+        color: $concrete;
+        z-index: 999;
+
+        .uil {
+            font-size: 1.2rem;
+            margin-left: 1rem;
+        }
+    }
+    
+    nav {
+        background: $white;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        width: 40%;
+        font-family: $bebas;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        font-size: 4rem;
+        transform-origin: top;
+        overflow: hidden;
+        z-index: 99;
+        
+        .wrapper {
+            margin: 4rem;
+
+            a {
+                text-decoration: none;
+                color: $graphite;
+                transition: 200ms ease-in-out;
+
+                &:hover {
+                    margin-left: 2rem;
+                }
+            }
+        }
+    }
+}
+
+
 /* LANDING PAGE */
 #landing {
     display: flex;
@@ -500,6 +564,14 @@ button.view:hover::before {
 /* Phones (smaller screens) */
 @media only screen and (max-width: 767px) {
     /* Your CSS for phones here */
+    .landing-nav {
+        padding: 1rem 2rem;
+
+        nav {
+            width: 100%;
+        }
+    }
+
     #landing {
 
         .wrapper {

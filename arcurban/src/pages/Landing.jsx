@@ -1,7 +1,57 @@
-import { useEffect, useState } from "react";
-import { listings } from "../utils/data";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react"
+import { listings } from "../utils/data"
+import { Link } from "react-router-dom"
+import { motion } from 'framer-motion'
 
+
+const itemVarsP = {
+  initial: {
+      y: '7rem',
+      opacity: '0',
+      transition: {
+          duration: 0.5
+      }
+  }, 
+  open: {
+      y: 0,
+      opacity: '1',
+      transition: {
+          duration: 0.5,
+      }
+  },
+  exit: {
+      y: '7rem',
+      opacity: '0',
+      transition: {
+          duration: 0.5
+      }
+  }
+}
+
+const itemVarsH = {
+  initial: {
+      y: '7rem',
+      opacity: '0',
+      transition: {
+          duration: 0.5
+      }
+  }, 
+  open: {
+      y: 0,
+      opacity: '1',
+      transition: {
+          duration: 0.5,
+          delay: 0.3
+      }
+  },
+  exit: {
+      y: '7rem',
+      opacity: '0',
+      transition: {
+          duration: 0.5
+      }
+  }
+}
 
 const Landing = () => {
     const [activeProperty, setActiveProperty] = useState(0);
@@ -10,20 +60,20 @@ const Landing = () => {
     useEffect(() => {
         const interval = setInterval(() => {
           setActiveProperty((prevActive) => (prevActive + 1) % homeData.length);
-        }, 10000);
+        }, 10000)
     
         return () => clearInterval(interval);
-      }, []);
+      }, [])
   
     const handleNext = () => {
       setActiveProperty((prevActive) => (prevActive + 1) % homeData.length);
-    };
+    }
   
     const handlePrev = () => {
       setActiveProperty((prevActive) =>
         prevActive === 0 ? homeData.length - 1 : prevActive - 1
-      );
-    };
+      )
+    }
   
     const btns = homeData.map((_, index) => (
       <button
@@ -31,7 +81,7 @@ const Landing = () => {
         key={index}
         onClick={() => setActiveProperty(index)}
       />
-    ));
+    ))
   
     return (
       <section id="landing">
@@ -45,11 +95,23 @@ const Landing = () => {
         {activeProperty}
         <div className="wrapper">
           <div className="intro">
-            <div className="property-type">
-              <p>{homeData[activeProperty].property_type}</p>
+            <div style={{ overflow: 'hidden' }} className="property-type">
+              {<motion.p
+                key={homeData[activeProperty].property_type}
+                variants={itemVarsP}
+                initial='initial'
+                animate='open'
+                exit='exit'
+              >{homeData[activeProperty].property_type}</motion.p>}
             </div>
-            <div className="property-name">
-              <h1>{homeData[activeProperty].property_name}</h1>
+            <div style={{ overflow: 'hidden' }} className="property-name">
+              <motion.h1
+                key={homeData[activeProperty].property_name}
+                variants={itemVarsH}
+                initial='initial'
+                animate='open'
+                exit='exit'
+              >{homeData[activeProperty].property_name}</motion.h1>
             </div>
             <button className="view">
               <Link to={`/listings/property/${homeData[activeProperty].id}`}>view listing</Link>
