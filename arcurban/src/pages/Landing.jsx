@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { listings } from "../utils/data"
 import { Link } from "react-router-dom"
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 
 
 const itemVarsP = {
@@ -95,6 +95,7 @@ const Landing = () => {
         {activeProperty}
         <div className="wrapper">
           <div className="intro">
+            <AnimatePresence>
             <div style={{ overflow: 'hidden' }} className="property-type">
               {<motion.p
                 key={homeData[activeProperty].property_type}
@@ -116,6 +117,7 @@ const Landing = () => {
             <button className="view">
               <Link to={`/listings/property/${homeData[activeProperty].id}`}>view listing</Link>
             </button>
+          </AnimatePresence>
           </div>
         </div>
   
